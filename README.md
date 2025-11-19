@@ -37,6 +37,8 @@ Go inside the project folder:
 ```
 cd CatVision
 pip install -r requirements.txt
+or
+pip3 install -r requirements.txt
 ```
 
 This will install:

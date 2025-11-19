@@ -37,7 +37,10 @@ Go inside the project folder:
 ```
 cd CatVision
 pip install -r requirements.txt
-or
+```
+or after cloning
+```
+cd CatVision
 pip3 install -r requirements.txt
 ```
 

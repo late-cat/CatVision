@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CatVision-motion detector</title>
-  <link rel="stylesheet" href="static/style.css">
+  <title>CatVision - Motion Detector</title>
+  <meta name="description" content="Real-time human motion detection using your webcam">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐱</text></svg>">
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
   <div class="container">
-    <div class="header">
-      <h1>CatVision-motion detector</h1>
-      <a class="btn" href="https://github.com/late-cat" target="_blank" rel="noopener">late_cat</a>
-    </div>
-    <div class="stream">
-      <img id="video" src="/video_feed" alt="Video stream">
-    </div>
+    <header class="header">
+      <h1>🐱 CatVision</h1>
+      <a class="btn" href="https://github.com/late-cat/CatVision" target="_blank" rel="noopener">GitHub</a>
+    </header>
+    <main class="stream">
+      <img id="video" src="/video_feed" alt="Live video stream">
+    </main>
+    <footer class="footer">
+      <p>Made by <a href="https://github.com/late-cat">late-cat</a></p>
+    </footer>
   </div>
-  <script src="static/app.js"></script>
+  <script src="/static/js/app.js"></script>
 </body>
+
 </html>

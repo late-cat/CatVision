@@ -1,104 +1,95 @@
-🐱 CatVision
+# 🐱 CatVision
 
-A simple & fast real-time human-detection system using your device's webcam.
-Powered by Flask + YOLO + OpenCV, runs on any laptop/PC without extra setup.
+Real-time human motion detection using your webcam.
 
-⚡️ Features
-- Runs on any device with a webcam
-- Real-time human detection
-- Lightweight and beginner-friendly
-- No complicated setup (no virtual environment needed)
-- Just clone → install → run
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)](https://flask.palletsprojects.com)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.9+-red.svg)](https://opencv.org)
 
-🔧 Requirements
-- Python 3.9+
-- A working webcam
-- Git installed on your system
+---
 
-📥 Installation (Beginner Friendly)
-Anyone can run your project in 3 steps:
+## ⚡ Features
 
-1️⃣ Clone the project
+- Real-time motion detection
+- Audio alert on detection
+- Works on any webcam
+- Simple configuration
+- Beginner-friendly code
 
-Windows / Mac / Linux — all same command
-Open any folder → Right-click → Open Terminal
-Then run:
+---
 
-```
+## 📥 Quick Start
+
+```bash
 git clone https://github.com/late-cat/CatVision.git
-```
-
-This creates a folder named `CatVision`.
-
-2️⃣ Install the required packages
-
-Go inside the project folder:
-
-```
 cd CatVision
 pip install -r requirements.txt
-```
-or after cloning
-```
-cd CatVision
-pip3 install -r requirements.txt
-```
-
-This will install:
-- Flask
-- OpenCV
-- NumPy
-- Ultralytics (YOLO)
-- Gunicorn (not required locally but harmless)
-
-3️⃣ Run the application
-
-Just run:
-
-```
 python app.py
 ```
 
-You will see something like:
+Open: http://localhost:5000
 
-```
-Running on http://127.0.0.1:5000
-```
+---
 
-Open your browser and visit:
-
-- http://localhost:5000
-- http://127.0.0.1:5000
-
-Your webcam will turn on and detection begins.
-
-📌 Notes
-- Make sure your camera is not used by another app.
-- If your device has multiple cameras, you can change the camera index in `app.py`:
-
-```
-detector = MotionDetector(video_source=1)
-```
-
-- Works on Windows/Mac/Linux.
-
-📂 Project Structure
+## 📂 Project Structure
 
 ```
 CatVision/
-├─ motion/
-│  ├─ __init__.py
-│  └─ detector.py
-├─ static/
-│  ├─ style.css
-│  └─ app.js
-├─ templates/
-│  └─ index.html
-├─ app.py
-├─ requirements.txt
-└─ README.txt
+├── motion/
+│   ├── __init__.py
+│   └── detector.py         # Motion detection logic
+├── static/
+│   ├── css/
+│   │   └── style.css       # Styles
+│   ├── js/
+│   │   └── app.js          # Alert handling
+│   └── audio/
+│       └── alert.mp3       # Alert sound
+├── templates/
+│   └── index.html          # Web interface
+├── app.py                  # Flask server
+├── config.py               # Settings
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
 
-🙌 Credits
-- Created by late-cat(bapi)
-- Built with Flask, OpenCV & YOLO
+---
+
+## ⚙️ Configuration
+
+Edit `config.py` to customize:
+
+```python
+VIDEO_SOURCE = 0            # Camera index (0, 1, 2...)
+SERVER_PORT = 5000          # Web server port
+MIN_CONTOUR_AREA = 150      # Minimum detection size
+MAX_CONTOUR_AREA = 7000     # Maximum detection size
+ALERT_DURATION = 2.0        # Alert duration in seconds
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech | Purpose |
+|------|---------|
+| Flask | Web server |
+| OpenCV | Video processing |
+| NumPy | Array operations |
+
+---
+
+## 📝 How It Works
+
+1. Captures webcam frames
+2. Subtracts background to find movement
+3. Filters by size and shape
+4. Tracks movement speed
+5. Triggers alert if human-like
+
+---
+
+## 👨‍💻 Author
+
+**late-cat (BAPI)** — [@late-cat](https://github.com/late-cat)
